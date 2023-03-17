@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="pageHead">Library</div>
+
+    <div class="mainContent">
+      <div class="subHead">Your Books:</div>
+      <button class="addBook"onclick="openForm()">Add Book</button>
+
+      <div class="form-popup" id="add">
+        <form action="" class="form-container">
+          <h1>Add Book</h1>
+          <label for="Title"><b>Title</b></label>
+          <input type="text" placeholder="Enter title" id="Title" name="Title" required />
+
+          <label for="auth"><b>Author</b></label>
+          <input type="text" placeholder="Enter Author" id="auth" name="auth" required />
+
+          <label for="pg#"><b>Pages</b></label>
+          <input type="number" placeholder="Enter Pages" id="pg#" name="pg#" required />
+
+
+          <button type="submit" class="btn">Add Book</button>
+          <button type="button" class="btn cancel" onclick="closeForm()">
+            Close
+          </button>
+        </form>
+      </div>
+      <ul class="books">
+        
+        </div>
+      </ul>
+    </div>
+  </body>
+</html>
