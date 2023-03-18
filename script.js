@@ -1,22 +1,27 @@
-function Book(title, author, pages) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
+class Book {
+  constructor(title, author, pages) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+  }
 }
 
 let Library = [];
 
-function addBookToLibrary(event) {
-  const book = new Book(
-    document.getElementById("Title").value,
+
+
+class addBookToLibrary extends Book{
+  constructor(e){
+    const book = super(document.getElementById("Title").value,
     document.getElementById("auth").value,
-    document.getElementById("pg#").value,
-  );
-  Library.push(book);
-  closeForm();
-  displayBook(book);
-  clearForm();
-  event.preventDefault();
+    document.getElementById("pg#").value);
+    Library.push(book);
+    closeForm();
+    displayBook(book);
+    clearForm();
+    event.preventDefault(e);
+  }
+
 }
 
 const listOfBooks = document.querySelector(".books");
@@ -52,9 +57,9 @@ function displayBook(book) {
   const trash = document.createElement("button");
   trash.classList.add("trash");
   trash.textContent = "trash";
-  trash.addEventListener("click", ()=>{
+  trash.addEventListener("click", () => {
     trash.parentElement.remove();
-  })
+  });
   bookInfo.appendChild(trash);
 
   listOfBooks.appendChild(bookInfo);
@@ -75,4 +80,7 @@ function clearForm() {
 }
 
 const addBook = document.querySelector(".btn");
-addBook.addEventListener("click", addBookToLibrary, false);
+addBook.addEventListener("click", () => {
+  const book = new addBookToLibrary(false);
+});
+
